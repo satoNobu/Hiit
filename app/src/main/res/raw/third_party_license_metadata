@@ -1,0 +1,28 @@
+0:47 play-services-oss-licenses
+48:47 play-services-basement
+96:46 legacy-support-v4
+143:46 media
+190:46 rxandroid
+237:46 rxjava
+284:49 reactive-streams
+334:731 UTF
+1066:2500 zlib
+3567:19442 ICU4C
+23010:11358 CCTZ
+34369:680 STL
+35050:1602 JSR 305
+36653:1732 Protobuf Nano
+38386:1481 darts_clone
+39868:243 tz database
+40112:1558 RE2
+41671:3182 PCRE
+44854:11358 safeparcel
+56213:46 lint-gradle
+56260:46 lint
+56307:46 lint-checks
+56354:46 lint-api
+56401:46 intellij-core
+56448:46 kotlin-compiler
+56495:46 uast
+56542:46 groovy-all
+56589:46 error_prone_annotations

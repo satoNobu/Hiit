@@ -1,7 +1,13 @@
 <resources>
     <string name="app_name">Hiit</string>
-    <string name="action_favorite">お気に入り</string>
-    <string name="action_settings">設定</string>
+    <string name="menu_settings">設定</string>
+    <string name="menu_licenses">規約</string>
+    <string name="ok_btn">OK</string>
+    <string name="cancel_btn">CANCEL</string>
+    <string name="dialog_title_work_time">WorkTime</string>
+    <string name="dialog_title_rest_time">RestTime</string>
+    <string name="dialog_title_set_count">SetCount</string>
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

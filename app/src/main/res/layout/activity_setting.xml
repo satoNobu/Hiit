@@ -16,100 +16,69 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
-        android:id="@+id/workTimeEditLayout"
-        android:layout_width="match_parent"
+
+    <TextView
+        android:id="@+id/workTime"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:gravity="center"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="50dp"
+        android:text="work time "
+        android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/my_toolbar">
+        app:layout_constraintTop_toBottomOf="@+id/my_toolbar" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="work time"
-            android:textSize="30sp" />
-
-        <EditText
-            android:id="@+id/workTime"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:autofillHints="aa"
-            android:ems="10"
-            android:inputType="number"
-            tools:ignore="LabelFor" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/restTimeEditLayout"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/workTimeEdit"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:gravity="center"
-        android:orientation="horizontal"
+        android:text="1s"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/workTimeEditLayout">
+        app:layout_constraintStart_toEndOf="@+id/workTime"
+        app:layout_constraintTop_toBottomOf="@+id/my_toolbar" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="rest time"
-            android:textSize="30sp" />
-
-        <EditText
-            android:id="@+id/restTime"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:autofillHints="aa"
-            android:ems="10"
-            android:inputType="number"
-            tools:ignore="LabelFor" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/setCountEditLayout"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/restTime"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="50dp"
-        android:gravity="center"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="rest time"
+        android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/restTimeEditLayout">
+        app:layout_constraintTop_toBottomOf="@+id/workTime" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="set count"
-            android:textSize="30sp" />
-
-        <EditText
-            android:id="@+id/setCount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:autofillHints="aa"
-            android:ems="10"
-            android:inputType="number"
-            tools:ignore="LabelFor" />
-    </LinearLayout>
-
-    <Button
+    <TextView
+        android:id="@+id/restTimeEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:text="save"
+        android:text="10s"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/restTime"
+        app:layout_constraintTop_toBottomOf="@+id/workTime" />
+
+    <TextView
+        android:id="@+id/setCnt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
+        android:text="setCount"
+        android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/setCountEditLayout"></Button>
+        app:layout_constraintTop_toBottomOf="@+id/restTime" />
 
-
+    <TextView
+        android:id="@+id/setCntEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="2Set"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/setCnt"
+        app:layout_constraintTop_toBottomOf="@+id/restTime" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
