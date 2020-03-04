@@ -3,10 +3,14 @@
     <string name="menu_settings">設定</string>
     <string name="menu_licenses">規約</string>
     <string name="ok_btn">OK</string>
-    <string name="cancel_btn">CANCEL</string>
+    <string name="cancel_btn">Cancel</string>
+    <string name="start_btn">START</string>
     <string name="dialog_title_work_time">WorkTime</string>
     <string name="dialog_title_rest_time">RestTime</string>
     <string name="dialog_title_set_count">SetCount</string>
+    <string name="workTime">workTime \n %1$ds</string>
+    <string name="restTime">restTime \n %1$ds</string>
+    <string name="setCount">setCount \n %1$dset</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->

@@ -9,7 +9,7 @@ class PickerPresenter(
 ) : PickerContract.Presenter {
 
     override fun clickOkBtn(value: Int, dataType: Constants.SettingData) {
-        when(dataType) {
+        when (dataType) {
             Constants.SettingData.WORK_TIME -> pre.saveWorkTime(value)
             Constants.SettingData.REST_TIME -> pre.saveRestTime(value)
             Constants.SettingData.SET_COUNT -> pre.saveSetCount(value)

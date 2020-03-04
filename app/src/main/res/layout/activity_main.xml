@@ -16,7 +16,7 @@
         android:layout_marginStart="0dp"
         android:layout_marginTop="0dp"
         android:background="?attr/colorPrimary"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        android:theme="@style/NoActionBarTheme"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
@@ -47,15 +47,14 @@
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/progressBar"
             android:layout_centerInParent="true"
-            android:text="0"
             android:textAppearance="?android:attr/textAppearanceSmall" />
     </RelativeLayout>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/startBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="START"
+        android:text="@string/start_btn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -68,28 +67,28 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button">
+        app:layout_constraintTop_toBottomOf="@+id/startBtn">
         <TextView
+            android:id="@+id/setCount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_gravity="center"
-            android:gravity="center"
-            android:text="8set"/>
+            android:gravity="center" />
         <TextView
+            android:id="@+id/workTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_gravity="center"
-            android:gravity="center"
-            android:text="20s"/>
+            android:gravity="center" />
         <TextView
+            android:id="@+id/restTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_gravity="center"
-            android:gravity="center"
-            android:text="10s"/>
+            android:gravity="center" />
 
     </LinearLayout>
 

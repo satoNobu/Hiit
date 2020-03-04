@@ -5,6 +5,8 @@ class Constants {
     enum class SettingData() {
         WORK_TIME,
         REST_TIME,
-        SET_COUNT
+        SET_COUNT,
+        USE_TTS,
+        INIT_TTS
     }
 }

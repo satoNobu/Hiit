@@ -7,6 +7,7 @@ import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
+import com.nobumoko.hiit.Model.SettingPreferenceRepository
 import com.nobumoko.hiit.Model.TextToSpeech
 import com.nobumoko.hiit.R
 import com.nobumoko.hiit.SettingScreen.SettingActivity
@@ -15,21 +16,19 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class TopActivity : AppCompatActivity(), TopContract.View {
 
-    var repeatCnt: Long = 2
-    val workTime: Long = 5
-    val restTime: Long = 3
-
     val presenter by lazy {
-        TopPresenter(this, TextToSpeech(applicationContext))
+        TopPresenter(
+            this,
+            TextToSpeech(SettingPreferenceRepository(applicationContext)),
+            SettingPreferenceRepository(applicationContext)
+        )
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(findViewById(R.id.my_toolbar))
-        this.button.setOnClickListener {
-            presenter.startWorkUpBtn(workTime = 30, restTime = 3, setCount = 2)
-        }
+        presenter.init(applicationContext)
     }
 
     override fun showCountDownTimer(progressValue: String) {
@@ -46,6 +45,15 @@ class TopActivity : AppCompatActivity(), TopContract.View {
 
     override fun setProgressValueOfProgressBar(progressValue: Int) {
         progressBar.progress = progressValue
+    }
+
+    override fun setSettingData(workTime: Int, restTime: Int, setCount: Int) {
+        this.workTime.text = getString(R.string.workTime, workTime)
+        this.restTime.text = getString(R.string.restTime, restTime)
+        this.setCount.text = getString(R.string.setCount, setCount)
+        this.startBtn.setOnClickListener {
+            presenter.startWorkUpBtn(workTime = workTime, restTime = restTime, setCount = setCount)
+        }
     }
 
     override fun onDestroy() {
