@@ -11,6 +11,7 @@
     <string name="workTime">workTime \n %1$ds</string>
     <string name="restTime">restTime \n %1$ds</string>
     <string name="setCount">setCount \n %1$dset</string>
+    <string name="setCountNow">%1$dset</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->

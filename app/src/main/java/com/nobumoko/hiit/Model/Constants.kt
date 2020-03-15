@@ -9,4 +9,9 @@ class Constants {
         USE_TTS,
         INIT_TTS
     }
+
+    enum class HiitState() {
+        WORK,
+        REST
+    }
 }

@@ -2,6 +2,7 @@ package com.nobumoko.hiit.TopScreen
 
 import android.content.Context
 import android.util.Log
+import com.nobumoko.hiit.Model.Constants
 import com.nobumoko.hiit.Model.SettingPreferenceRepository
 import com.nobumoko.hiit.Model.TextToSpeech
 import io.reactivex.Observable
@@ -25,23 +26,44 @@ class TopPresenter(
     }
 
     override fun startWorkUpBtn(workTime: Int, restTime: Int, setCount: Int) {
-        val workTimer = countDownTimer(workTime.toLong())
-        val rest = countDownTimer(restTime.toLong())
-        val result = Observable.concat(workTimer, rest)
-        result
-            .repeat(setCount.toLong())
-            .subscribe()
+        var count: Int = 0
+        val workTimer = countDownTimer(workTime.toLong(), Constants.HiitState.WORK)
+        val restTimeer = countDownTimer(restTime.toLong(), Constants.HiitState.REST)
+        val result = Observable.interval(1, TimeUnit.SECONDS)
+            .take(4)
+            .subscribeOn(AndroidSchedulers.mainThread())
+            .observeOn(AndroidSchedulers.mainThread())
+            .doOnNext {
+                view.setTxtReady(3 - it)
+            }
+            .doOnComplete {
+                view.readyEnd()
+                Observable.concat(workTimer, restTimeer)
+                    .doOnSubscribe {
+                        Log.i("Test", "リピート")
+                        count += 1
+                        view.setCountNow(count)
+                        view.repeatStart()
+                    }
+                    .doOnComplete {
+                        view.workEnd()
+                    }
+                    .repeat(setCount.toLong())
+                    .subscribe()
+            }
+        result.subscribe()
     }
 
-    private fun countDownTimer(count: Long): Observable<Long> {
+    private fun countDownTimer(count: Long, state: Constants.HiitState): Observable<Long> {
         return Observable.interval(1, TimeUnit.SECONDS)
             .take(count + 1)
 //            .map { aLong -> count - aLong }
             .subscribeOn(Schedulers.newThread())
             .observeOn(AndroidSchedulers.mainThread())
             .doOnSubscribe {
-                Log.i("Test", "Sstrt " + it.toString())
+                Log.i("Test", "Sstrt " + state)
                 speechText("Start")
+                view.setBackColor(state)
                 view.setMaxValueOfProgressBar(count.toInt())
                 view.setProgressValueOfProgressBar(count.toInt())
             }
