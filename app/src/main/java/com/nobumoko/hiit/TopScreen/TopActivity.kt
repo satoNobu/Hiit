@@ -9,6 +9,9 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.gms.ads.AdListener
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
 import com.nobumoko.hiit.Model.Constants
 import com.nobumoko.hiit.Model.SettingPreferenceRepository
@@ -34,6 +37,18 @@ class TopActivity : AppCompatActivity(), TopContract.View {
         setContentView(R.layout.activity_main)
         setSupportActionBar(findViewById(R.id.my_toolbar))
         presenter.init(applicationContext)
+        MobileAds.initialize(this) {}
+        val adRequest = AdRequest.Builder().build()
+        adView.loadAd(adRequest)
+        adView.adListener = object: AdListener() {
+            override fun onAdLoaded() {
+                super.onAdLoaded()
+            }
+
+            override fun onAdFailedToLoad(errCode: Int) {
+                super.onAdFailedToLoad(errCode)
+            }
+        }
     }
 
     override fun showCountDownTimer(progressValue: String) {
