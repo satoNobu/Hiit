@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Hiit</string>
-    <string name="menu_settings">Configuration</string>
-    <string name="menu_licenses">Terms</string>
+    <string name="menu_settings">Thành phần</string>
+    <string name="menu_licenses">Điều khoản</string>
     <string name="ok_btn">OK</string>
     <string name="cancel_btn">Cancel</string>
     <string name="start_btn">START</string>
