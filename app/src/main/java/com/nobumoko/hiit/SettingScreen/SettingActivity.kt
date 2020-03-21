@@ -21,28 +21,31 @@ class SettingActivity : AppCompatActivity(), PickerContract.CallBack, SettingCon
         setSupportActionBar(findViewById(R.id.my_toolbar))
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         workTimeEdit.setOnClickListener {
-            showDialog(
+            val dialog = PickerDialog(
                 Constants.SettingData.WORK_TIME,
                 getString(R.string.dialog_title_work_time),
                 120,
-                30
-            )
+                30,
+                10)
+            dialog.show(supportFragmentManager, "setting_dialog")
         }
         restTimeEdit.setOnClickListener {
-            showDialog(
+            val dialog = PickerDialog(
                 Constants.SettingData.REST_TIME,
                 getString(R.string.dialog_title_rest_time),
                 60,
-                5
-            )
+                5,
+                5)
+            dialog.show(supportFragmentManager, "setting_dialog")
         }
         setCntEdit.setOnClickListener {
-            showDialog(
+            val dialog = PickerDialog(
                 Constants.SettingData.SET_COUNT,
                 getString(R.string.dialog_title_set_count),
                 10,
-                1
-            )
+                1,
+                1)
+            dialog.show(supportFragmentManager, "setting_dialog")
         }
         if (presenter.getInitTTS()) {
             switchUseTTS.isEnabled = true
@@ -54,7 +57,8 @@ class SettingActivity : AppCompatActivity(), PickerContract.CallBack, SettingCon
         }
     }
 
-    override fun pickerDialogResult() {
+    override fun pickerDialogResult(value: Int, dataType: Constants.SettingData) {
+        presenter.saveSettingData(value, dataType)
         presenter.getSettingData()
     }
 
@@ -68,16 +72,5 @@ class SettingActivity : AppCompatActivity(), PickerContract.CallBack, SettingCon
     override fun onResume() {
         super.onResume()
         presenter.getSettingData()
-    }
-
-    private fun showDialog(
-        dataType: Constants.SettingData,
-        titleStr: String,
-        maxValue: Int,
-        minValue: Int
-    ) {
-        // Dialogの表示
-        val dialog = PickerDialog(dataType, titleStr, maxValue, minValue)
-        dialog.show(supportFragmentManager, "setting_dialog")
     }
 }
