@@ -1,32 +1,12 @@
 0:47 play-services-ads
 48:47 play-services-oss-licenses
-96:47 play-services-ads-identifier
+96:47 play-services-base
 144:47 play-services-gass
-192:47 play-services-ads-lite
-240:47 play-services-measurement-sdk-api
-288:47 play-services-tasks
-336:47 play-services-measurement-base
-384:47 play-services-basement
-432:46 browser
-479:47 play-services-ads-base
-527:731 UTF
-1259:2500 zlib
-3760:19442 ICU4C
-23203:11358 CCTZ
-34562:680 STL
-35243:1602 JSR 305
-36846:1732 Protobuf Nano
-38579:1481 darts_clone
-40061:243 tz database
-40305:1558 RE2
-41864:3182 PCRE
-45047:11358 safeparcel
-56406:46 lint-gradle
-56453:46 lint
-56500:46 lint-checks
-56547:46 lint-api
-56594:46 intellij-core
-56641:46 kotlin-compiler
-56688:46 uast
-56735:46 groovy-all
-56782:46 error_prone_annotations
+192:47 play-services-tasks
+240:47 play-services-ads-identifier
+288:47 play-services-ads-lite
+336:47 play-services-measurement-sdk-api
+384:47 play-services-measurement-base
+432:47 play-services-basement
+480:46 browser
+527:47 play-services-ads-base
