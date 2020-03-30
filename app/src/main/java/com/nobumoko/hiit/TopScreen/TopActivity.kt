@@ -121,10 +121,10 @@ class TopActivity : AppCompatActivity(), TopContract.View {
     override fun setBackColor(state: Constants.HiitState) {
         when (state) {
             Constants.HiitState.WORK -> {
-                topLayout.setBackgroundColor(Color.RED)
+                txtProgress.setTextColor(Color.RED)
             }
             Constants.HiitState.REST -> {
-                topLayout.setBackgroundColor(Color.BLUE)
+                txtProgress.setTextColor(Color.BLUE)
             }
         }
     }

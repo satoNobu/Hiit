@@ -16,13 +16,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <TextView
         android:id="@+id/workTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
-        android:text="work time "
+        android:layout_marginTop="@dimen/list_item_spacing"
+        android:text="@string/title_work_time"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/my_toolbar" />
@@ -43,7 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
         android:layout_marginTop="50dp"
-        android:text="rest time"
+        android:text="@string/title_rest_time"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/workTime" />
@@ -65,7 +65,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
         android:layout_marginTop="56dp"
-        android:text="setCount"
+        android:text="@string/title_set_count"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/restTime" />
@@ -86,7 +86,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:text="setUseTTS"
+        android:text="@string/title_use_speech"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="@+id/setCnt"
         app:layout_constraintTop_toBottomOf="@+id/setCnt" />

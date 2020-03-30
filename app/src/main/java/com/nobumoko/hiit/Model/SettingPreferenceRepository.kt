@@ -12,7 +12,7 @@ class SettingPreferenceRepository(context: Context) : SettingRepository {
     }
 
     override fun getWorkTime(): Int {
-        return pre.getInt(Constants.SettingData.WORK_TIME.toString(), 0)
+        return pre.getInt(Constants.SettingData.WORK_TIME.toString(), 30)
     }
 
     override fun saveRestTime(time: Int) {
@@ -22,7 +22,7 @@ class SettingPreferenceRepository(context: Context) : SettingRepository {
     }
 
     override fun getRestTime(): Int {
-        return pre.getInt(Constants.SettingData.REST_TIME.toString(), 0)
+        return pre.getInt(Constants.SettingData.REST_TIME.toString(), 10)
     }
 
     override fun saveSetCount(count: Int) {
@@ -32,7 +32,7 @@ class SettingPreferenceRepository(context: Context) : SettingRepository {
     }
 
     override fun getSetCount(): Int {
-        return pre.getInt(Constants.SettingData.SET_COUNT.toString(), 0)
+        return pre.getInt(Constants.SettingData.SET_COUNT.toString(), 4)
     }
 
     override fun saveUseTTS(use: Boolean) {

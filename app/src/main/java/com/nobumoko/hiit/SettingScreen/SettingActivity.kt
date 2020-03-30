@@ -23,7 +23,7 @@ class SettingActivity : AppCompatActivity(), PickerContract.CallBack, SettingCon
         workTimeEdit.setOnClickListener {
             val dialog = PickerDialog(
                 Constants.SettingData.WORK_TIME,
-                getString(R.string.dialog_title_work_time),
+                getString(R.string.title_work_time),
                 120,
                 30,
                 10)
@@ -32,7 +32,7 @@ class SettingActivity : AppCompatActivity(), PickerContract.CallBack, SettingCon
         restTimeEdit.setOnClickListener {
             val dialog = PickerDialog(
                 Constants.SettingData.REST_TIME,
-                getString(R.string.dialog_title_rest_time),
+                getString(R.string.title_rest_time),
                 60,
                 5,
                 5)
@@ -41,7 +41,7 @@ class SettingActivity : AppCompatActivity(), PickerContract.CallBack, SettingCon
         setCntEdit.setOnClickListener {
             val dialog = PickerDialog(
                 Constants.SettingData.SET_COUNT,
-                getString(R.string.dialog_title_set_count),
+                getString(R.string.title_set_count),
                 10,
                 1,
                 1)
